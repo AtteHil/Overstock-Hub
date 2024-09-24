@@ -5,7 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js",
+    "utils-insert": "node ./src/utils/insertExampleData.js",
+    "utils-delete": "node ./src/utils/deleteOffers.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -8,7 +8,8 @@ const offerSchema = new mongoose.Schema({
     city: { type: String, required: true },
     streetAddress: { type: String, required: true },
     zipCode: { type: String, required: true },
-    description: { type: String, required: false }
+    description: { type: String, required: false },
+    state: { type: String, default: 'available', required: true },
 });
 
 const Offer = mongoose.model('Offer', offerSchema);

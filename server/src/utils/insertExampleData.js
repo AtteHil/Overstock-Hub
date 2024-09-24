@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Offer from './models/Offer.js'; // Adjust the path as necessary
+import Offer from '../models/Offer.js'; // Adjust the path as necessary
 dotenv.config();
 
 const exampleOffers = [
