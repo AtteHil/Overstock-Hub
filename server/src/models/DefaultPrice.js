@@ -8,6 +8,6 @@ const defaultPriceSchema = new mongoose.Schema({
     }
 });
 
-const DefaultPrice = mongoose.model('DefaultPrice', offerSchema);
+const DefaultPrice = mongoose.model('DefaultPrice', defaultPriceSchema);
 
 export default DefaultPrice;
