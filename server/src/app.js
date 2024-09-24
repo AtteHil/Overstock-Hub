@@ -1,9 +1,10 @@
 import express from 'express';
+import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import usersRouter from '../routes/users.js';
-import offersRouter from '../routes/offers.js';
+import usersRouter from './routes/users.js';
+import offersRouter from './routes/offers.js';
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,7 @@ db.on('connected', () => { console.log("Connected to database") });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOpts));
+app.use(morgan('combined'));
 
 app.use('/users', usersRouter);
 app.use('/offers', offersRouter);
