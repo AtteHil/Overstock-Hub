@@ -15,7 +15,6 @@ const corsOpts = {
     optionsSuccessStatus: 200,
 };
 
-
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@overstockhub.5dyyc.mongodb.net/?retryWrites=true&w=majority&appName=OverstockHub`);
 mongoose.Promise = Promise;
 
