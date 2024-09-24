@@ -159,6 +159,61 @@ import { green } from '@mui/material/colors';
                       color={passwordError ? 'error' : 'primary'}
                     />
                   </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="company-name">Company Name</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="company-name"
+                      placeholder="Overstock Hub"
+                      type="company-name"
+                      id="company-name"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="city">City</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="city"
+                      placeholder="Lappeenranta"
+                      type="city"
+                      id="city"
+                      autoComplete="city"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="postal-code">Postal Code</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="postal-code"
+                      placeholder="35850"
+                      type="postal-code"
+                      id="postal-code"
+                      autoComplete="postal-code"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="street-address">Street Address</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="street-address"
+                      placeholder="Orioninkatu 1"
+                      type="street-address"
+                      id="street-address"
+                      autoComplete="street-address"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
                   {/* <FormControlLabel
                     control={<Checkbox value="allowExtraEmails" color="primary" />}
                     label="I want to receive updates via email."
