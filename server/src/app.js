@@ -13,6 +13,7 @@ const corsOpts = {
     origin: 'http://localhost:3000',
     allowedMethods: ['GET', 'POST', 'PUT', 'DELETE'],
     optionsSuccessStatus: 200,
+    allowedHeaders: 'Content-Type',
 };
 
 

@@ -4,26 +4,46 @@ import OfferTemplate from "./offerTemplate";
 import finnishCountyList from "./finnishCountyList";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-export default function Offers(){
-    const offers=[];
+import { useEffect, useState } from 'react';
+export default function Offers() {
+    const [selectedCounty, setSelectedCounty] = useState("Uusimaa");
+    const [offers, setOffers] = useState([]);
     const dropDownItems = [];
+    useEffect(() => {
 
-    for (let i = 0; i < 15; i++) {
-            offers.push(<OfferTemplate/>)
-        } 
-    for(let j=0;j<finnishCountyList.length;j++){
+        fetch("http://localhost:5050/offers", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',  // Ensure Content-Type is set
+            },
+            body: JSON.stringify({ county: selectedCounty }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                const offerTemplates = data.map((offer, index) => (
+                    <OfferTemplate key={index} name={offer.productName} price={offer.price} description={offer.description} amount={offer.amount} />
+                ));
+
+                // Update the offers state to trigger re-render
+                setOffers(offerTemplates);
+            })
+            .catch((error) => console.log(error));
+    }, [selectedCounty]);
+
+    for (let j = 0; j < finnishCountyList.length; j++) {
         dropDownItems.push(finnishCountyList[j])
     }
-    
-    return(
+
+    return (
         <Grid2 container spacing={0}>
             <Grid2 sx={{ mt: 12 }} size={6}>{offers}</Grid2>
-            <Grid2 sx={{ mt: 12,
+            <Grid2 sx={{
+                mt: 12,
                 position: "fixed",   // Keeps it fixed in the viewport
                 top: "20px",         // Distance from the top of the page
                 right: "20px",      // Distance from the right side of the page
                 zIndex: 5,        // Ensure it's on top of other elements
-                }} size={5}>    
+            }} size={5}>
                 <Autocomplete
                     id="county-select"
                     sx={{
@@ -61,6 +81,10 @@ export default function Offers(){
                     options={finnishCountyList}
                     autoHighlight
                     getOptionLabel={(option) => option}
+                    onChange={(event, value) => {
+
+                        setSelectedCounty(value); // Set the selected county
+                    }}
                     renderOption={(props, option) => {
                         const { key, ...optionProps } = props;
                         return (
@@ -89,6 +113,6 @@ export default function Offers(){
                     )}
 
                 /></Grid2></Grid2>
-        
-        )
+
+    )
 };

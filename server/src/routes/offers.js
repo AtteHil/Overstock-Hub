@@ -36,7 +36,7 @@ router.post('/create', async (req, res, next) => {
 // Update an offer to 'reserved' state
 router.put('/reserve/:id', async (req, res, next) => {
   const { id } = req.params;
-  
+
   try {
     const offer = await Offer.findById(id);
 
