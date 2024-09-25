@@ -89,15 +89,15 @@ import { green } from '@mui/material/colors';
     };
   
     return (
-          <Stack direction="column" justifyContent="space-between">
             <Stack
+                direction="column" justifyContent="space-between"
               sx={{
                 justifyContent: 'center',
                 height: '100dvh',
                 p: 2,
               }}
             >
-              <Card variant="outlined">
+              <Card variant="outlined" sx={{p: 4, m: 10}}>
                 <Typography
                   component="h1"
                   variant="h4"
@@ -125,7 +125,7 @@ import { green } from '@mui/material/colors';
                     />
                   </FormControl> */}
                   <FormControl>
-                    <FormLabel htmlFor="type">Do you wish to sell?</FormLabel>
+                    <FormLabel htmlFor="type">Do you wish to sell your overstock?</FormLabel>
                     <GreenSwitch value={isSeller} onChange={handleChange} id="seller"></GreenSwitch>
                   </FormControl>
                   <FormControl>
@@ -159,6 +159,61 @@ import { green } from '@mui/material/colors';
                       color={passwordError ? 'error' : 'primary'}
                     />
                   </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="company-name">Company Name</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="company-name"
+                      placeholder="Overstock Hub"
+                      type="company-name"
+                      id="company-name"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="city">City</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="city"
+                      placeholder="Lappeenranta"
+                      type="city"
+                      id="city"
+                      autoComplete="city"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="postal-code">Postal Code</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="postal-code"
+                      placeholder="35850"
+                      type="postal-code"
+                      id="postal-code"
+                      autoComplete="postal-code"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="street-address">Street Address</FormLabel>
+                    <TextField
+                      required
+                      fullWidth
+                      name="street-address"
+                      placeholder="Orioninkatu 1"
+                      type="street-address"
+                      id="street-address"
+                      autoComplete="street-address"
+                      variant="outlined"
+                      disabled={!isSeller}
+                    />
+                  </FormControl>
                   {/* <FormControlLabel
                     control={<Checkbox value="allowExtraEmails" color="primary" />}
                     label="I want to receive updates via email."
@@ -186,6 +241,5 @@ import { green } from '@mui/material/colors';
                 </Box>
               </Card>
             </Stack>
-          </Stack>
     );
   }
