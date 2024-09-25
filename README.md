@@ -3,8 +3,11 @@ The Prophet GreenADeN Hackathon project.
 
 Running the software you need .env file (which is icluded in the zip folder that is submitted)
 
+
 prerequisites:
+    
     yarn version 1.22.22
+    
     node.js version 18 or 20
 
 
@@ -27,4 +30,5 @@ prerequisites:
 
 
 now front is running in http://localhost:3000
+
 server is running in http://localhost:5050
