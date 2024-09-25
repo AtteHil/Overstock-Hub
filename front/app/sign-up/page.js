@@ -89,15 +89,15 @@ import { green } from '@mui/material/colors';
     };
   
     return (
-          <Stack direction="column" justifyContent="space-between">
             <Stack
+                direction="column" justifyContent="space-between"
               sx={{
                 justifyContent: 'center',
                 height: '100dvh',
                 p: 2,
               }}
             >
-              <Card variant="outlined">
+              <Card variant="outlined" sx={{p: 4, m: 10}}>
                 <Typography
                   component="h1"
                   variant="h4"
@@ -125,7 +125,7 @@ import { green } from '@mui/material/colors';
                     />
                   </FormControl> */}
                   <FormControl>
-                    <FormLabel htmlFor="type">Do you wish to sell?</FormLabel>
+                    <FormLabel htmlFor="type">Do you wish to sell your overstock?</FormLabel>
                     <GreenSwitch value={isSeller} onChange={handleChange} id="seller"></GreenSwitch>
                   </FormControl>
                   <FormControl>
@@ -241,6 +241,5 @@ import { green } from '@mui/material/colors';
                 </Box>
               </Card>
             </Stack>
-          </Stack>
     );
   }
