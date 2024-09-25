@@ -4,10 +4,10 @@ const router = express.Router();
 
 // Fetch offers by productName and county
 router.post('/', async (req, res, next) => {
-  const { productName, county } = req.body;
+  const { county } = req.body;
 
   try {
-    const offers = await Offer.find({ productName, county });
+    const offers = await Offer.find({ county });
 
     if (offers.length === 0) {
       return res.status(404).json({ message: 'No offers found' });
