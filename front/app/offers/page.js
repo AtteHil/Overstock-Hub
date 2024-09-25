@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useEffect, useState } from 'react';
 export default function Offers() {
-    const [selectedCounty, setSelectedCounty] = useState("Uusimaa");
+    const [selectedCounty, setSelectedCounty] = useState("");
     const [offers, setOffers] = useState([]);
     const dropDownItems = [];
     useEffect(() => {

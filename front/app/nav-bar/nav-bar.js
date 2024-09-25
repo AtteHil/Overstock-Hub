@@ -12,30 +12,30 @@ export default function NavBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
-      };
-    
-      const handleClose = () => {
+    };
+
+    const handleClose = () => {
         setAnchorEl(null);
-      };
+    };
 
     return (
-        
-            <Box sx={{ 
-                    position: 'sticky',
-                    
-                    
-                    justifyContent: '',
-                    p: 1,
-                    
-                    borderRadius: 1,
-                    
-                }}>
-                
-                <AppBar position="fixed" sx ={{backgroundColor: '#00A36C', m: 1, borderRadius:1}}>
-                    <Toolbar sx={{ display: 'flex' }}>
-                        <Box flexGrow={1}>
+
+        <Box sx={{
+            position: 'sticky',
+
+
+            justifyContent: '',
+            p: 1,
+
+            borderRadius: 1,
+
+        }}>
+
+            <AppBar position="fixed" sx={{ backgroundColor: '#00A36C', m: 1, borderRadius: 1 }}>
+                <Toolbar sx={{ display: 'flex' }}>
+                    <Box flexGrow={1}>
                         <Link href="/">
-                            <Button variant="h6" style={{fontSize: 24, fontFamily: 'impact, fantasy', color: 'white'}} >
+                            <Button variant="h6" style={{ fontSize: 24, fontFamily: 'impact, fantasy', color: 'white' }} >
                                 OverStock Hub
                             </Button>
                         </Link>
@@ -47,45 +47,45 @@ export default function NavBar() {
                             onClick={handleMenu}
                             color="inherit"
                         >
-                            FI
+                            EN
                         </Button>
-                        </Box>
-                        <Link href="/offers">
-                            <Button sx={{backgroundColor: '#3b3b3b', borderRadius: 1, marginRight: 1}} color="inherit">Offers</Button>
-                        </Link>
-                        <Link href="/sign-up">
-                            <Button sx={{backgroundColor: '#3b3b3b', borderRadius: 1}} color="inherit">Login</Button>
-                        </Link>
-                        
-                        
-                        <Menu
-                            
-                            id="menu-appbar"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            anchorOrigin={{
+                    </Box>
+                    <Link href="/offers">
+                        <Button sx={{ backgroundColor: '#3b3b3b', borderRadius: 1, marginRight: 1 }} color="inherit">Offers</Button>
+                    </Link>
+                    <Link href="/sign-up">
+                        <Button sx={{ backgroundColor: '#3b3b3b', borderRadius: 1 }} color="inherit">Login</Button>
+                    </Link>
+
+
+                    <Menu
+
+                        id="menu-appbar"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        anchorOrigin={{
                             vertical: 'bottom',
                             horizontal: 'left',
-                            }}
-                            
-                            transformOrigin={{
+                        }}
+
+                        transformOrigin={{
                             vertical: 'top',
                             horizontal: 'left',
-                            }}
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                            disableScrollLock 
-                        >
-                            <MenuItem onClick={handleClose}>EN</MenuItem>
-                            <MenuItem onClick={handleClose}>SWE</MenuItem>
-                        </Menu>
-                        
-                        
-                    </Toolbar>
-                    
-                </AppBar>
-            
-            </Box>
-        
+                        }}
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                        disableScrollLock
+                    >
+                        <MenuItem onClick={handleClose}>FI</MenuItem>
+                        <MenuItem onClick={handleClose}>SWE</MenuItem>
+                    </Menu>
+
+
+                </Toolbar>
+
+            </AppBar>
+
+        </Box>
+
     );
 }

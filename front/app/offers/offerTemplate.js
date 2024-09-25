@@ -43,7 +43,7 @@ export default function OfferTemplate(props) {
         </Grid2>
         <Grid2 >
           <Typography variant="subtitle1" component="div">
-            {props.price} €
+            {(props.price / props.amount).toFixed(2)} €
           </Typography>
           <Typography variant="body2">
             Reserve
