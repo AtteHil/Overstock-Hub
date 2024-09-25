@@ -10,12 +10,19 @@ prerequisites:
 
 - Open two terminals.
 - run commands
+  
     cd front
+
     yarn install
+
     yarn run dev
+
 - in second terminal run
+
     cd server
+
     yarn install
+
     yarn start
 
 
