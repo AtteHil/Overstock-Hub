@@ -76,7 +76,7 @@ export default function SignInCard() {
           p: 2,
         }}
       >
-        <Card variant="outlined">
+        <Card variant="outlined" sx={{p: 4, m: 10}}>
           <Typography
             component="h1"
             variant="h4"
